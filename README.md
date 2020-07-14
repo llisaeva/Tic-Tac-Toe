@@ -6,7 +6,7 @@
   <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/Demo_Images/TicTacToe-Gameplay.gif" align ="right" alt="animated" width= "400"/>
 </p>
 
-A Tic-Tac-Toe game where the user can play with a friend, 
+A __Tic-Tac-Toe game__ where the user can play with a friend, 
 with a bot or watch 2 bots play against each other. 
 
 The bot moves strategically, its opponent can either lose or draw.
