@@ -3,11 +3,11 @@
 # Tic-Tac-Toe
 
 <p align = "right">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/Demo_Images/TicTacToe-Gameplay.gif" align ="right" alt="animated" width= "400"/>
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToe-Gameplay.gif" align ="right" alt="animated" width= "400"/>
 </p>
 
-A __Tic-Tac-Toe game__ where the user can play with a friend, 
-with a bot or watch 2 bots play against each other. 
+A __Tic-Tac-Toe game__ where the user can play with a friend,
+with a bot or watch 2 bots play against each other.
 
 The bot moves strategically, its opponent can either lose or draw.
 
@@ -24,11 +24,11 @@ The bot moves strategically, its opponent can either lose or draw.
 2. [Settings Window](#settings-window)
 
 ## Game Window
-The game starts in __Player vs Player mode__. The top corners show the names and scores for Player X and Player O. 
-You can __change the color themes__ by clicking on the swatches on the bottom left corner. 
+The game starts in __Player vs Player mode__. The top corners show the names and scores for Player X and Player O.
+You can __change the color themes__ by clicking on the swatches on the bottom left corner.
 
 <p align = "right">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/Demo_Images/TicTacToe-Options.gif" align ="left" alt="animated" width= "250"/>
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToe-Options.gif" align ="left" alt="animated" width= "250"/>
 </p>
 
 ## Settings Window
