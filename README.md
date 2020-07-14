@@ -29,7 +29,7 @@ The game starts in __Player vs Player mode__. The top corners show the names and
 You can __change the color themes__ by clicking on the swatches on the bottom left corner.
 
 <p align = "right">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToe-Options.gif" align ="left" alt="animated" width= "250"/>
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToe-Options.gif" align ="left" alt="animated" width= "230"/>
 </p>
 
 ## Settings Window
@@ -37,6 +37,8 @@ __Select one of 3 game modes:__
 - __Player vs Player (the default mode)__ - have full control over placing the marks on the board.
 - __Player vs Master__ – play against an unbeatable bot. Choose the mark that the bot will play with. The __?__ option will assign a random mark for Master on each replay.
 - __Master vs Master__ – watch two bots play.
+
+You can also click on the player names to change them. 
 
 ## Download and Run
 __Prerequisites:__ 
