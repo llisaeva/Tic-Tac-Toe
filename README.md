@@ -50,5 +50,5 @@ Download and unzip the project.
 __Run Command:__
 
 ```bash
-    ../Tic-Tac-Toe-master> ./gradlew run
+    ..\Tic-Tac-Toe-master> ./gradlew run
 ```
