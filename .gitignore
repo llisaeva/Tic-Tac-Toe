@@ -11,3 +11,5 @@ bin/
 .classpath
 
 .settings/
+
+gradle.properties
