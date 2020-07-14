@@ -1,0 +1,16 @@
+* {
+	-fx-background-color: #efe1d3;
+}
+
+.key:disabled{
+	-fx-background-color: #efe1d3;
+	-fx-opacity: 1.0;
+}
+
+.cross-hatch, .win-line {
+	-fx-stroke: #cebaaf;
+}
+
+.player-label, .score {
+	-fx-text-fill: #797472;
+}
