@@ -43,7 +43,7 @@ You can also click on the player names to change them. <br><br><br><br>
 ## Download and Run
 __Prerequisites:__ 
 JRE - [click here](https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB) for installation steps.
-Make sure you set the JAVA_HOME system variable.
+Make sure to set the JAVA_HOME system variable.
 
 Download and unzip the project.
 
