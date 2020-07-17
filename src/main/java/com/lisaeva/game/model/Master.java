@@ -25,6 +25,8 @@ public class Master {
 
 	private Map<String, Integer> strategyCodes = new HashMap<String, Integer>();
 	private GameCoder gameCodes;
+	private String masterPositionCode;
+	private String playerPositionCode;
 
 	public Master(Mark mark, Box[] grid, GameCoder gameCodes) {
 		this.mark = mark;
@@ -61,109 +63,119 @@ public class Master {
 	}
 
 	public void play() {
-		if (!Grid.isPaused()) {
-			String masterPositionCode = "";
-			String playerPositionCode = "";
-			
-			masterPositionCode = gameCodes.getPositionCode(mark);
-			
-			switch (mark) {
-			case X:
-				playerPositionCode = gameCodes.getPositionCode(Mark.O);
-				break;
-			case O:
-				playerPositionCode = gameCodes.getPositionCode(Mark.X);
-				break;
-			}
-			// check if grid is empty, if so, go first
-			for (int i = 0; i < grid.length; i++) {
-				if (grid[i].getMark() != null)
-					break;
-				else if (i == grid.length - 1) {
-					if ((int) (Math.random() * 4) > 0)
-						addMark(4);
-					else {
-						int temp = (int) (Math.random() * 4);
-						if (temp == 0)
-							addMark(0);
-						else if (temp == 1)
-							addMark(2);
-						else if (temp == 2)
-							addMark(6);
-						else
-							addMark(8);
-
-					}
-					return;
-				}
-			}
-
-			Pattern p;
-			Matcher m;
-
-			int rotationKey;
-			int[] rotationCode;
-			String stateCode = "";
-			String indexCode = gameCodes.getIndexCode();
-
-			// check for self's 2-in-a-row
-			for (int i = 1; i < 9; i++) {
-				p = Pattern.compile(".*[" + i + "].*[" + i + "].*");
-				m = p.matcher(masterPositionCode);
-				if (m.matches()) {
-					if (searchPosition(mark, i))
-						return;
-				}
-			}
-
-			// check for opponent's 2-in-a-row
-			for (int i = 1; i < 9; i++) {
-				p = Pattern.compile(".*[" + i + "].*[" + i + "].*");
-				m = p.matcher(playerPositionCode);
-				if (m.matches()) {
-					if (searchPosition(mark, i))
-						return;
-				}
-			}
-		
-			// make a move, based on a strategy
-			if (indexCode.length() % 2 == 0 && indexCode.substring(0, 1).equals("4"))
-				rotationKey = Integer.parseInt(indexCode.substring(0, 2));
-			else
-				rotationKey = Integer.parseInt(indexCode.substring(0, 1));
-			rotationCode = rotationCodes.get(rotationKey);
-			for (int i = 0; i < indexCode.length(); i++) {
-				for (int j = 0; j < rotationCode.length; j++) {
-					if (Integer.parseInt(indexCode.substring(i, i + 1)) == rotationCode[j]) {
-						stateCode += j;
-					}
-				}
-			}
-			
-			for (String strategy : strategyCodes.keySet()) {
-				p = Pattern.compile(strategy);
-				m = p.matcher(stateCode);
-				if (m.matches()) {
-					addMark(rotationCode[strategyCodes.get(strategy)]);
-					return;
-				}
-			}
-
-			// tie condition, pick the first empty spot
-			for (int i = 0; i < grid.length; i++) {
-				if (grid[i].getMark() == null) {
-					addMark(i);
-					return;
-				} 
-				if (i == grid.length -1) {
-					Grid.pause(true);
-					return;
-				}
-			}
-
+		if (!Grid.isPaused()) {			
+			getPositionCodes();
+			if (checkForEmptyGrid())
+				return;
+			if (hasTwoInARow(masterPositionCode))
+				return;
+			if (hasTwoInARow(playerPositionCode))
+				return;
+			if (applyStrategy())
+				return;
+			randomMove();
 		}
 	}
 	
+	private void getPositionCodes() {
+		masterPositionCode = "";
+		playerPositionCode = "";
+		masterPositionCode = gameCodes.getPositionCode(mark);
+		
+		switch (mark) {
+		case X:
+			playerPositionCode = gameCodes.getPositionCode(Mark.O);
+			break;
+		case O:
+			playerPositionCode = gameCodes.getPositionCode(Mark.X);
+			break;
+		}
+	}
+	
+	
+	private boolean checkForEmptyGrid() {
+		for (int i = 0; i < grid.length; i++) {
+			if (grid[i].getMark() != null)
+				break;
+			else if (i == grid.length - 1) {
+				if ((int) (Math.random() * 4) > 0)
+					addMark(4);
+				else {
+					int temp = (int) (Math.random() * 4);
+					if (temp == 0)
+						addMark(0);
+					else if (temp == 1)
+						addMark(2);
+					else if (temp == 2)
+						addMark(6);
+					else
+						addMark(8);
+
+				}
+				return true;
+			}
+		} return false;
+	}
+	
+	private boolean hasTwoInARow(String positionCode) {
+		Pattern p;
+		Matcher m;
+
+		for (int i = 1; i < 9; i++) {
+			p = Pattern.compile(".*[" + i + "].*[" + i + "].*");
+			m = p.matcher(positionCode);
+			if (m.matches()) {
+				if (searchPosition(mark, i))
+					return true;
+			}
+		} return false;
+	}
+	
+	private boolean applyStrategy() {
+		Pattern p;
+		Matcher m;
+
+		int rotationKey;
+		int[] rotationCode;
+		String stateCode = "";
+		String indexCode = gameCodes.getIndexCode();
+		
+		if (indexCode.length() % 2 == 0 && indexCode.substring(0, 1).equals("4"))
+			rotationKey = Integer.parseInt(indexCode.substring(0, 2));
+		else
+			rotationKey = Integer.parseInt(indexCode.substring(0, 1));
+		rotationCode = rotationCodes.get(rotationKey);
+		for (int i = 0; i < indexCode.length(); i++) {
+			for (int j = 0; j < rotationCode.length; j++) {
+				if (Integer.parseInt(indexCode.substring(i, i + 1)) == rotationCode[j]) {
+					stateCode += j;
+				}
+			}
+		}
+		
+		for (String strategy : strategyCodes.keySet()) {
+			p = Pattern.compile(strategy);
+			m = p.matcher(stateCode);
+			if (m.matches()) {
+				addMark(rotationCode[strategyCodes.get(strategy)]);
+				return true;
+			}
+		} return false;
+	}
+	
+	private void randomMove() {
+		for (int i = 0; i < grid.length; i++) {
+			if (grid[i].getMark() == null) {
+				addMark(i);
+				return;
+			} 
+			if (i == grid.length -1) {
+				Grid.pause(true);
+				return;
+			}
+		}
+	}
+		
 	private void addMark(int index) {
 		Grid.addMark(mark,index);
 	}
