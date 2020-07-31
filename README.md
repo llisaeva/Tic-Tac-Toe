@@ -22,7 +22,8 @@ The bot moves strategically, its opponent can either lose or draw.
 ## Table of Contents
 1. [Game Window](#game-window)
 2. [Settings Window](#settings-window)
-3. [Download and Run](#download-and-run)
+3. [How the Game Works](#how-the-game-works)
+4. [Download and Run](#download-and-run)
 
 ## Game Window
 The game starts in __Player vs Player mode__. The top corners show the names and scores for Player X and Player O.
@@ -39,6 +40,10 @@ __Select one of 3 game modes:__
 - __Master vs Master__ – watch two bots play.
 
 You can also click on the player names to change them. <br><br><br><br>
+
+## How the Game Works
+Each cell in the grid has an associated code (illustrated below). 3 matching digits from different codes identify a winning condition.
+
 
 ## Download and Run
 __Prerequisites:__ 
