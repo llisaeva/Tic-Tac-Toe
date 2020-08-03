@@ -42,13 +42,13 @@ __Select one of 3 game modes:__
 You can also click on the player names to change them. <br><br><br><br>
 
 ## How the Game Works
-<p align = "right">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToeExplanation.png" align ="left" width= "300"/>
-</p>
-
 Behind the scenes, each cell in the grid has an associated __code__ (shown in image). __3 matching digits__ from different codes identify a winning condition.
 __Master__ uses these codes to understand the state of the board. <br>
 The __optimal tic-tac-toe strategy__ used to create Master’s move decisions is described [here](https://en.wikipedia.org/wiki/Tic-tac-toe).
+
+<p align= "center">
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/tic-tac-toe-explanation.png" width= "800"/>
+</p>
 
 ## Download and Run
 __Prerequisites:__ 
