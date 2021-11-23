@@ -1,0 +1,16 @@
+# location of javaFX library (MUST BE SPECIFIED)
+PATH_TO_FX=
+
+# resource dir
+res=tictactoe/res
+
+mkdir build
+
+# compile the code
+javac --module tictactoe --module-path "$PATH_TO_FX" --add-modules=javafx.controls --module-source-path .:tictactoe -d build/
+
+# move the resources
+cp -r $res build/$res
+
+# create a jar file
+jar -c -f tictactoe.jar --module-path "$PATH_TO_FX" --main-class=game.Launcher -C build/tictactoe .

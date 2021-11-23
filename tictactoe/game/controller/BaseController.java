@@ -1,4 +1,4 @@
-package com.lisaeva.game.controller;
+package game.controller;
 
 public abstract class BaseController {
 

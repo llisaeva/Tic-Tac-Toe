@@ -1,9 +1,8 @@
-package com.lisaeva.game;
-
-import com.lisaeva.game.view.ViewGenerator;
+package game;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import game.view.ViewGenerator;
 
 public class Launcher extends Application {
 	public static void main(String... args) {launch(args);}

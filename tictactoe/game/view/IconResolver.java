@@ -1,4 +1,4 @@
-package com.lisaeva.game.view;
+package game.view;
 
 import javafx.scene.control.Labeled;
 import javafx.scene.image.Image;
@@ -31,7 +31,7 @@ public abstract class IconResolver {
 		path = ViewGenerator.getTheme().toString().toLowerCase();
 		if (path.equals("default"))
 			path = "def";
-		path = "/img/" + path + "/";
+		path = "/res/img/" + path + "/";
 		return path;
 	}
 }

@@ -1,31 +1,30 @@
-package com.lisaeva.game.view;
+package game.view;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import com.lisaeva.game.controller.BaseController;
-import com.lisaeva.game.controller.GameController;
-import com.lisaeva.game.controller.OptionsController;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import game.controller.BaseController;
+import game.controller.GameController;
+import game.controller.OptionsController;
 
 public abstract class ViewGenerator {
 	
 	private static Theme theme = Theme.DEFAULT;
-	private static String fontFile1 = "/font/BAHNSCHRIFT.TTF";
-	private static String fontFile2 = "/font/BS_Static_Bold.ttf";
+	private static String fontFile1 = "/res/font/BAHNSCHRIFT.TTF";
+	private static String fontFile2 = "/res/font/BS_Static_Bold.ttf";
 	private static Stage board = new Stage();
 	private static ArrayList<Scene> scenes = new ArrayList<>();
 
 	
 	public static void initializeBoard() {
-		BaseController game = new GameController("/fxml/tictactoe.fxml");
-		BaseController options = new OptionsController("/fxml/options.fxml");
+		BaseController game = new GameController("/res/fxml/tictactoe.fxml");
+		BaseController options = new OptionsController("/res/fxml/options.fxml");
 		loadFont();
 		scenes.add(0, initializeScene(game));
 		scenes.add(1, initializeScene(options));

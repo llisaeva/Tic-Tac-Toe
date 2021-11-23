@@ -1,4 +1,4 @@
-package com.lisaeva.game.model;
+package game.model;
 
 import java.util.HashMap;
 import java.util.Map;

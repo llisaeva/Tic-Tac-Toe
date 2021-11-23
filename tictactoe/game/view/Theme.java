@@ -1,4 +1,4 @@
-package com.lisaeva.game.view;
+package game.view;
 
 public enum Theme {
 	DEFAULT("Default"),
@@ -8,6 +8,7 @@ public enum Theme {
 	
 	
 	private final String fileName;
+	private static final String folder = "/res/css/";
 	
 	private Theme(String fileName) {
 		this.fileName = fileName;
@@ -15,16 +16,16 @@ public enum Theme {
 
 	public static String getCSSPath(Theme theme) {
 		switch (theme) {
-			case DEFAULT: return "/css/themeDefault.css";
-			case DARK: return "/css/themeDark.css";
-			case BEIGE: return "/css/themeBeige.css";
-			case ASH: return "/css/themeAsh.css";
+			case DEFAULT: return folder + "themeDefault.css";
+			case DARK: return folder + "themeDark.css";
+			case BEIGE: return folder + "themeBeige.css";
+			case ASH: return folder + "themeAsh.css";
 			default : return null;
 		}
 	}
 	
 	public static String getSwatchCSSPath() {
-		return "/css/swatch.css";
+		return "/res/css/swatch.css";
 	}
 
 	public static Theme getThemeByID(String id) {

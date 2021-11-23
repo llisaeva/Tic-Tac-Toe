@@ -1,4 +1,4 @@
-package com.lisaeva.game.model;
+package game.model;
 
 public enum CrossLine {
 	DIAGONAL_LEFT,

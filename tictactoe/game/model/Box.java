@@ -1,6 +1,5 @@
-package com.lisaeva.game.model;
-
-import javafx.scene.control.Button;
+package game.model;
+import javafx.scene.control.Button; 
 
 public class Box {
 	private Mark mark;

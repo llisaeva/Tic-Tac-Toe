@@ -1,12 +1,7 @@
-package com.lisaeva.game.controller;
+package game.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.lisaeva.game.model.GameData;
-import com.lisaeva.game.model.GameMode;
-import com.lisaeva.game.model.Grid;
-import com.lisaeva.game.view.ViewGenerator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.image.ImageView;
+import game.model.GameData;
+import game.model.GameMode;
+import game.model.Grid;
+import game.view.ViewGenerator;
 
 public class OptionsController extends BaseController implements Initializable {
 

@@ -1,0 +1,5 @@
+# location of javaFX library (MUST BE SPECIFIED) 
+export PATH_TO_FX=
+
+# run the game
+java --module-path "$PATH_TO_FX" --add-modules=javafx.controls,javafx.fxml,javafx.graphics,javafx.base -jar tictactoe.jar

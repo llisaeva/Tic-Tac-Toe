@@ -1,9 +1,7 @@
-
-
 # Tic-Tac-Toe
 
 <p align = "right">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToe-Gameplay.gif" align ="right" alt="animated" width= "400"/>
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo/TicTacToe-Gameplay.gif" align ="right" alt="animated" width= "400"/>
 </p>
 
 A __Tic-Tac-Toe game__ where the user can play with a friend,
@@ -30,7 +28,7 @@ The game starts in __Player vs Player mode__. The top corners show the names and
 You can __change the color themes__ by clicking on the swatches on the bottom left corner.
 
 <p align = "right">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/TicTacToe-Options.gif" align ="left" alt="animated" width= "250"/>
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo/TicTacToe-Options.gif" align ="left" alt="animated" width= "250"/>
 </p>
 
 ## Settings Window
@@ -47,7 +45,7 @@ __Master__ uses these codes to understand the state of the board. <br>
 The __optimal tic-tac-toe strategy__ used to create Master’s move decisions is described [here](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 <p align= "center">
-  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo_images/tic-tac-toe-explanation.png" width= "800"/>
+  <img src="https://github.com/llisaeva/Tic-Tac-Toe/blob/master/demo/tic-tac-toe-explanation.png" width= "800"/>
 </p>
 
 ## Download and Run
@@ -55,10 +53,14 @@ __Prerequisites:__
 JRE - [click here](https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFJHAB) for installation steps.
 Make sure to set the JAVA_HOME system variable.
 
+JavaFX - [click here](https://gluonhq.com/products/javafx/)
+Put the the path to the lib folder in the `compile` and `run` scripts.
+
 Download and unzip the project.
 
 __Run Command:__
 
 ```bash
-    ..\Tic-Tac-Toe-master> ./gradlew run
+    ./compile
+    ./run
 ```

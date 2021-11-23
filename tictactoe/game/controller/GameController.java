@@ -1,14 +1,7 @@
-package com.lisaeva.game.controller;
+package game.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.lisaeva.game.model.GameData;
-import com.lisaeva.game.model.Grid;
-import com.lisaeva.game.model.Mark;
-import com.lisaeva.game.view.IconResolver;
-import com.lisaeva.game.view.Theme;
-import com.lisaeva.game.view.ViewGenerator;
 
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -18,6 +11,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Line;
 import javafx.util.Duration;
+import game.model.GameData;
+import game.model.Grid;
+import game.model.Mark;
+import game.view.IconResolver;
+import game.view.Theme;
+import game.view.ViewGenerator;
 
 public class GameController extends BaseController implements Initializable {
 

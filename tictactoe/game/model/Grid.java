@@ -1,13 +1,14 @@
-package com.lisaeva.game.model;
+package game.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.lisaeva.game.controller.GameController;
-import com.lisaeva.game.view.IconResolver;
+
 import javafx.animation.PauseTransition;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
+import game.controller.GameController;
+import game.view.IconResolver;
 
 public class Grid {
 
